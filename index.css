@@ -1,0 +1,692 @@
+@charset "UTF-8";
+
+/* @font-face{font-family: 'Helvetica';
+src: url(./font/Helvetica.ttf);} */
+
+/* @font-face{font-family: 'ITCGaramondStd-BkNarrow';
+    src: url(./font/ITCGaramondStd-BkNarrow.otf);} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+body{
+  overflow-x: hidden;
+
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body {
+  /* width: 100vw; */
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  font-size: 100%;
+}
+
+/* 메인 */
+
+
+.banner.section {
+  height: 1820px;
+  position: relative;
+}
+.hamburger {
+  display: none;
+}
+
+.banner .container {
+  position: relative;
+
+  /* width: 100%; */
+}
+.header-area {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+  z-index: 999999;
+  position: fixed;
+  transition: 0.5s;
+  
+}
+.header-area.active{
+  background-color: #0c283dd6;
+  
+  
+}
+.header-area .header-logo {
+  width: 149px;
+  height: 70px;
+  position: fixed;
+
+  /* padding: 50px; */
+}
+
+.header-area .header-logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.header-area .header-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+
+input[id=trigger]{
+  display: none;
+
+
+
+}
+label[for=trigger]{
+  width: 30px;
+  height: 20px;
+  /* background-color: blanchedalmond; */
+  display: block;
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s;
+
+
+}
+label[for=trigger] span{
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+  
+}
+
+
+
+label[for=trigger] span:nth-child(1){
+  top: 0;
+
+}
+label[for=trigger] span:nth-child(2){
+  top: 50%;
+  
+}
+label[for=trigger] span:nth-child(3){
+  top: 100%;
+  
+}
+
+/* 체크됐을때 햄버거버튼 돌아가게 설정 */
+
+input[id=trigger]:checked ~ label[for=trigger] span:nth-child(1){
+  top: 50%;
+ transform: rotate(45deg);
+}
+input[id=trigger]:checked ~ label[for=trigger] span:nth-child(2){
+opacity: 0;
+}
+input[id=trigger]:checked ~ label[for=trigger] span:nth-child(3){
+  top: 50%;
+ transform: rotate(-45deg);
+}
+
+/* 사이드바영역 */
+.sidmenubox{
+  width: 400px;
+  height: 1820px;
+  background-color: #0c283d;
+  position: fixed;
+  /* 스크롤 되도 제자리에서 고정시킴 */
+ right: -400px;
+ transition: 0.3s;
+ top: 0;
+  
+}
+
+
+.sidebar{
+  width: 200px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 30%;
+  
+  
+  
+ 
+}
+
+
+.sidebar li {
+  line-height: 1.9;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+
+
+}
+
+.sidebar li a:hover{
+  color: aqua;
+  font-weight: 900;
+  
+}
+
+
+
+
+/* 사이드바 오른쪽으로 숨겼다가 나오게끔 처리 */
+
+input[id=trigger]:checked ~ .sidmenubox{
+  right: 0;
+  
+
+}
+
+/* 햄버거버튼 사이드바 영역만큼 같이 이동 */
+
+input[id=trigger]:checked ~ label[for=trigger]{
+  /* right: 410px; */
+  z-index: 999;
+}
+
+
+
+.hamburger-btn {
+}
+/* .hamburger-btn .hamburger {
+  width: 30px;
+  height: 20px;
+
+  display: block;
+  position: relative;
+}
+.header-area .hamburger-btn .hamburger span {
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  left: 0;
+  width: 30px;
+}
+.header-area .hamburger-btn .hamburger span:nth-child(1) {
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  left: 0;
+  top: 15px;
+  width: 30px;
+} */
+
+.banner.section {
+  width: 100%;
+  height: 1820px;
+}
+
+.banner.section .container {
+  width: 100%;
+  height: 100%;
+}
+.banner.section .innerbanner {
+  display: flex;
+  justify-content: center;
+}
+
+.banner.section .banner-box {
+  background-image: url(./img/main3.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  transform: scale(1);
+  height: 1820px;
+  width: 100%;
+  transform: translate3d(0, 0, 0) !important;
+  position: relative;
+  transition: 0.5s;
+}
+
+/* .banner.section .box-inner{
+    
+    overflow: hidden;
+   
+}
+
+
+.banner.section .innerbanner{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+} */
+
+.banner.section .inner-txt {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner.section .inner-txt h1 {
+  font-family: "Bodoni Moda", serif;
+  text-align: center;
+  font-size: 138px;
+  letter-spacing: -2px;
+  /* padding: 19%; */
+  line-height: 95%;
+  color: #fff;
+}
+
+.sec-1.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sec-1 .inner-txt h1 {
+  color: #0c283d;
+  text-align: center;
+  font-size: 160px;
+  letter-spacing: -2px;
+  font-family: "Bodoni Moda", serif;
+  line-height: 95%;
+}
+.sec-1 .inner-txt p {
+  color: #0c283d;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-family: Helvetica;
+  padding-top: 10px;
+}
+
+.sec-2.section {
+  height: 100vh;
+  background-color: #0c283d;
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+}
+.sec-2 .inner-txt {
+  color: #fff;
+  padding-left: 50px;
+  font-size: 5rem;
+  letter-spacing: -1.5px;
+  line-height: 110%;
+}
+
+.sec-2 .inner-txt:hover {
+  color: rgb(128, 255, 236);
+}
+
+.sec-3.section {
+  height: 1380px;
+  background-color: #0c283d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+
+/* .sec-3 .photo-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.sec-3 .photo {
+  background: url(./img/sec3.jpg) no-repeat 0 0;
+  background-size: cover;
+  width: 650px;
+  height: 890px;
+  /* position: absolute; */
+  /* top: 0;
+    left: 0; */
+
+  animation: photo 4s steps(4) infinite;
+}
+
+@keyframes photo {
+  to {
+    background-position-x: -2600px;
+  }
+}
+
+.sec-3 .inner-txt {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 220%;
+
+  z-index: 999;
+  font-family: "Bodoni Moda", serif;
+  padding-bottom: 30px;
+}
+
+/* .sec-3 .mask{
+s
+    width: 100%;
+    height: 100%;
+   
+    width: 650px;
+    height: 890px;
+    overflow: hidden;
+   
+   
+    
+   
+    
+   
+} */
+
+/* .sec-3 .cordbox1{
+   object-fit: cover;
+    
+
+    
+} */
+
+.sec-4.section {
+  height: 100vh;
+  background-color: #fff;
+}
+
+.sec-4 .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.sec-4 .inner-txt {
+  position: absolute;
+  left: 36%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sec-4 .inner-txt h1 {
+  color: #0c283d;
+  font-size: 4.5rem;
+  /* position: absolute; */
+  line-height: 110%;
+  font-family: "Bodoni Moda", serif;
+}
+
+.sec-4 .inner-txt p {
+  color: #0c283d;
+  font-size: 1.7rem;
+  /* position: absolute; */
+  font-family: Helvetica;
+  padding-top: 10px;
+}
+
+.sec-4 .card-box {
+  position: absolute;
+  left: 63%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.sec-5 {
+  width: 100%;
+
+  background-color: #0c283d;
+}
+/* .sec-5 .card-background{
+
+    
+} */
+.sec-5 .card-box {
+  position: sticky;
+  top: 0;
+  transition: 7s;
+}
+.sec-5 .card-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sec-6.section {
+  height: 100vh;
+  background-color: #0c283d;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec-6.section .inner-txt {
+  color: #fff;
+  font-size: 7rem;
+  line-height: 200%;
+  font-family: "Bodoni Moda", serif;
+}
+
+.sec-6.section .inner-txt:hover {
+  color: rgb(128, 255, 236);
+}
+
+footer {
+  height: 100%;
+}
+
+footer .container {
+  /* background-color: #0C283D; */
+}
+
+footer .inner-txt {
+  height: 300px;
+  background-color: #0c283d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica;
+}
+
+footer .inner-txt p {
+  color: #fff;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+footer .card-box {
+  width: 100%;
+  height: 780px;
+}
+
+footer .card-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+
+  
+ 
+
+ 
+  .banner.section {
+    /* height: 100vh; */
+    /* background-size: cover; */
+  }
+
+  .banner.section .banner-box {
+    background-size: cover;
+    /* height: 100%; */
+  }
+
+  .banner.section .inner-txt {
+    top: 31%;
+    font-size: 120px;
+  }
+  
+
+  .sec-1 .inner-txt h1 {
+    font-size: 137px;
+  }
+  .sec-1 .inner-txt p {
+    font-size: 1rem;
+  }
+
+  .sec-2 .inner-txt {
+    font-size: 3.7rem;
+  }
+  .sec-3.section{
+    height: 100vh;
+  }
+  .sec-3 .inner-txt {
+    font-size: 2.5rem;
+  }
+
+  .sec-3 .photo {
+    background-size: cover;
+    width: 650px;
+    height: 890px;
+  }
+
+  .sec-4 .container {
+  }
+
+  .sec-4 .inner-txt {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+  }
+
+  .sec-4 .inner-txt h1 {
+    text-align: center;
+    font-size: 52px;
+  }
+
+  .sec-4 .inner-txt p {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .sec-4 .card-box img {
+    /* width: 500px;
+    height: 650px; */
+
+    /* left: 63%;
+        top: 40%; */
+    /* transform: translate(-50%, -50%); */
+  }
+
+  .sec-5 .card-box {
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+  }
+
+  .sec-6.section .inner-txt {
+    font-size: 4rem;
+  }
+}
+/* 700에서 틀어지는 부분있으면 여기에 */
+@media (max-width: 800px) {
+  .sec-3 .photo {
+    background: url(./img/sj1.jpg) no-repeat 0 0;
+    background-size: cover;
+    
+    width: 450px;
+    height: 617px;
+
+    animation: photo 4s steps(4) infinite;
+  }
+  @keyframes photo {
+    to {
+      background-position-x: -1800px;
+    }
+  }
+
+
+}
+@media (max-width: 500px) {
+  
+ 
+
+
+
+
+  .header-area .header-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .banner.section .inner-txt h1 {
+    font-size: 110px;
+  }
+  .banner.section,
+  .banner.section .banner-box {
+    height: 100vh;
+  }
+  .header-area {
+    padding: 0 20px;
+  }
+  .sec-3 .photo {
+    background: url(./img/sj1.jpg) no-repeat 0 0;
+    background-size: cover;
+    
+    width: 450px;
+    height: 617px;
+
+    animation: photo 4s steps(4) infinite;
+  }
+  @keyframes photo {
+    to {
+      background-position-x: -1800px;
+    }
+  }
+
+
+  .sec-4 .inner-txt,
+  .sec-4 .card-box {
+    position: static;
+    transform: translate(0);
+  }
+  .sec-4 .container {
+    display: block;
+  }
+  .sec-2 .inner-txt {
+    padding: 0;
+  }
+  .sec-2.section,
+  .sec-3.section,
+  .sec-4.section,
+  .sec-6.section {
+    height: auto;
+    padding: 75px 20px;
+    box-sizing: border-box;
+  }
+  .sec-2 .inner-txt {
+    font-size: 2.7rem;
+  }
+  .sec-5 .card-box:last-child img {
+    object-position: -680px center;
+  }
+}
