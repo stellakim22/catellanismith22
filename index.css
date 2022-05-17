@@ -541,18 +541,18 @@ footer .card-box img {
   }
 
   .banner.section .inner-txt {
-    top: 50%;
+    top: 65%;
     font-size: 120px;
   }
   .banner.section .inner-txt h1{
-    font-size: 70px;
+    font-size: 60px;
   }
 
   .sec-1 .inner-txt h1 {
     font-size: 90px;
   }
   .sec-1 .inner-txt p {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .sec-2 .inner-txt {
@@ -630,7 +630,7 @@ footer .card-box img {
 }
 @media (max-width: 500px) {
   .banner.section .inner-txt h1{
-    font-size: 70px;
+    font-size: 60px;
   }
   
  
